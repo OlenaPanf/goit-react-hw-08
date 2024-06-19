@@ -1,0 +1,29 @@
+.container {
+  border: 2px solid rgba(128, 128, 128, 0.485);
+  border-radius: 6px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  /*justify-content: space-between;*/
+  gap: 20px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button {
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid grey;
+  background-color: rgba(128, 128, 128, 0.208);
+}
+
+.button:focus,
+.button:active {
+  outline: 0;
+  border: 2px solid rgba(128, 128, 128, 0.611);
+}
