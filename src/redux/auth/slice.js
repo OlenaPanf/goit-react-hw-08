@@ -18,52 +18,52 @@ const authSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(register.pending, state => {
-        state.isLoading = true; // Встановлюємо стан завантаження
-        state.isRefreshing = true; // Встановлюємо стан оновлення
+        state.isLoading = true;
+        state.isRefreshing = true;
       })
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
-        state.isLoading = false; // Скидаємо стан завантаження
+        state.isLoading = false;
         state.isLoggedIn = true;
-        state.isRefreshing = false; // Скидаємо стан оновлення
+        state.isRefreshing = false;
       })
       .addCase(register.rejected, (state, action) => {
-        state.isRefreshing = false; // Скидаємо стан оновлення
-        console.error(action.error); // Логовуємо помилку
-        state.isLoading = false; // Скидаємо стан завантаження
+        state.isRefreshing = false;
+        console.error(action.error);
+        state.isLoading = false;
       })
       .addCase(logIn.pending, state => {
-        state.isLoading = true; // Встановлюємо стан завантаження
-        state.isRefreshing = true; // Встановлюємо стан оновлення
+        state.isLoading = true;
+        state.isRefreshing = true;
       })
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-        state.isLoading = false; // Скидаємо стан завантаження
-        state.isRefreshing = false; // Скидаємо стан оновлення
+        state.isLoading = false;
+        state.isRefreshing = false;
       })
       .addCase(logOut.fulfilled, state => {
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = false;
-        state.isLoading = false; // Скидаємо стан завантаження
+        state.isLoading = false;
       })
       .addCase(refreshUser.pending, state => {
         state.isRefreshing = true;
-        state.isLoading = true; // Встановлюємо стан завантаження
+        state.isLoading = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
-        state.isLoading = false; // Скидаємо стан завантаження
-      })
-      .addCase(refreshUser.rejected, state => {
-        state.isRefreshing = false;
-        state.isLoading = false; // Скидаємо стан завантаження
+        state.isLoading = false;
       });
+    //   .addCase(refreshUser.rejected, state => {
+    //     state.isRefreshing = false;
+    //     state.isLoading = false;
+    //   });
   },
 });
 
