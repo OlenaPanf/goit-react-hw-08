@@ -65,20 +65,3 @@ export const refreshUser = createAsyncThunk(
     },
   }
 );
-
-// export const refreshUser = createAsyncThunk(
-//   'auth/refresh',
-//   async (_, thunkAPI) => {
-//     const token = localStorage.getItem('token');
-//     if (!token) {
-//       return thunkAPI.rejectWithValue('No token found');
-//     }
-//     setAuthHeader(token);
-//     try {
-//       const response = await axios.get('/users/current');
-//       return response.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
