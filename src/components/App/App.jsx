@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from '../Layout/Layout';
+import Layout from '../Layout/Layout';
 import './App.css'
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
@@ -17,7 +17,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/tasks" element={<ContactsPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
       </Suspense>
     </Layout>
