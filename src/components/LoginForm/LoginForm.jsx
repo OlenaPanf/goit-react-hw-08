@@ -7,10 +7,10 @@ export default function LoginForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(logIn(values));
-    // .unwrap()
-    // .then(data => console.log(data))
-    // .catch(err => console.log(err));
+    dispatch(logIn(values))
+    .unwrap()
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
 
     actions.resetForm();
   };
