@@ -37,7 +37,7 @@ export default function RegistrationForm() {
           Password
           <Field type="password" name="password" />
         </label>
-        <button type="submit">Register</button>
+        <button className={css.button} type="submit">Register</button>
       </Form>
     </Formik>
   );
